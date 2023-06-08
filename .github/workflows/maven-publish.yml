@@ -27,6 +27,7 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      run: java -jar target/country-wsdl-${{  github.ref_name }}.jar
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn --batch-mode deploy -s $GITHUB_WORKSPACE/settings.xml
