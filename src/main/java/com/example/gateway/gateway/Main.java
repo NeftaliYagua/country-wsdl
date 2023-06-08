@@ -22,7 +22,6 @@ public class Main {
             }
 
             CountryNameResponse response = soapService.clientCountryName(code);
-            System.err.println("\r\n\n");
             System.err.println("Resultado para el código de país PE: " + response.getCountryNameResult());
         };
     }
