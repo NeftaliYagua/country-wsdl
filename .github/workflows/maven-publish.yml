@@ -19,6 +19,8 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
+    - name: Versioning
+      run: sed -i "s/<version>1.0.0<\/version>/<version>${{ github.ref_name }}<\/version>/" pom.xml
     - name: Test with Maven
       run: mvn -B test --file pom.xml
     - name: Build with Maven
